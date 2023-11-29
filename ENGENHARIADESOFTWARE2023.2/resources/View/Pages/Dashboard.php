@@ -1,5 +1,5 @@
 <?php
-require_once '..\..\..\app\Controller\Pages\Servicos.php';
+ 
 use \App\Controller\Pages\Servico;
 
 $Servico = new Servico;

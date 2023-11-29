@@ -4,7 +4,7 @@
         <div class="hero-info">
             <div class="container mt-5">
                 <?php
-                require_once '..\..\..\app\Controller\Pages\Servicos.php';
+                // require_once '..\..\..\app\Controller\Pages\Servicos.php';
 
                 use \App\Controller\Pages\Servico;
 

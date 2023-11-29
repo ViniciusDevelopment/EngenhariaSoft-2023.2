@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"CadastroUsuarioTest::testCadastrarUsuario":0.162}}
+{"version":1,"defects":{"CadastroServicoTest::testCadastrarServico":8},"times":{"CadastroUsuarioTest::testCadastrarUsuario":0.155,"CadastroServicoTest::testCadastrarServico":0.061}}
