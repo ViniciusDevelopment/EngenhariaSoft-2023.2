@@ -3,9 +3,6 @@ use PHPUnit\Framework\TestCase;
 // require_once '..\app\Controller\Pages\Servicos.php';
 use \App\Controller\Pages\Servico;
 
-// Aqui seria o teste unitario para a função de Cadastro do serviço
-
-// ... Código anterior ...
 
 class CadastroServicoTest extends TestCase
 {
