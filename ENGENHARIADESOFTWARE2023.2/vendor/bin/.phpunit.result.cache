@@ -1,1 +1,1 @@
-{"version":1,"defects":{"CadastroServicoTest::testCadastrarServico":8},"times":{"CadastroUsuarioTest::testCadastrarUsuario":0.155,"CadastroServicoTest::testCadastrarServico":0.061}}
+{"version":1,"defects":{"CadastroServicoTest::testCadastrarServico":8,"CadastroUsuarioTest::testCadastrarUsuario":8},"times":{"CadastroUsuarioTest::testCadastrarUsuario":0.168,"CadastroServicoTest::testCadastrarServico":0.024}}

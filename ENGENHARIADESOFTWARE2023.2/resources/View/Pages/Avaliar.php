@@ -1,9 +1,11 @@
 <?php
 require_once '..\..\..\app\Controller\Pages\Avaliacao.php';
 
+use App\Controller\Pages\Autenticacao;
 use \App\Controller\Pages\Avalia;
 
 $Avalia = new Avalia;
+$Autenticacao = new Autenticacao;
 
 if (isset($_POST['tituloAvalia'])) {
     $titulo = $_POST['tituloAvalia'];
@@ -60,8 +62,16 @@ if (isset($_POST['confirmarExclusao'])) {
             <input type="number" class="form-control" id="notaAvalia" name="notaAvalia" required>
         </div>
         <div class="mb-3">
-           <label for="id_Avalia" class="form-label">ID do Prestador:</label>
-           <input type="number" class="form-control" id="id_Avalia" name="id_avaliado" required>
+           <label for="id_Avalia" class="form-label">Prestador de Serviço:</label>
+           <select class="form-control" id="id_Avalia" name="id_avaliado" required>
+        <?php
+        $prestadores = $Autenticacao->ObterPrestadoresServico();
+        // Preenche as opções do dropdown com os IDs e nomes dos prestadores
+        foreach ($prestadores as $id => $nome) {
+            echo "<option value=\"$id\">$nome</option>";
+        }
+        ?>
+    </select>
         </div>
         <div class="mb-3">
             <label for="descricaoAvalia" class="form-label">Descrição:</label>
@@ -149,14 +159,14 @@ if (isset($_POST['confirmarExclusao'])) {
                         echo "<div class='modal-dialog' role='document'>";
                         echo "<div class='modal-content'>";
                         echo "<div class='modal-header'>";
-                        echo "<h5 class='modal-title' id='exampleModalLabel'>Deletar o Serviço</h5>";
+                        echo "<h5 class='modal-title' id='exampleModalLabel'>Deletar a Avaliação</h5>";
                         echo "<button type='button' class='close' data-dismiss='modal' aria-label='Fechar'>";
                         echo "<span aria-hidden='true'>&times;</span>";
                         echo "</button>";
                         echo "</div>";
 
                         echo "<div class='modal-body'>";
-                        echo "<p>Tem certeza de que deseja excluir este serviço?</p>";
+                        echo "<p>Tem certeza de que deseja excluir esta Avaliação?</p>";
                         echo "</div>";
                         echo "<div class='modal-footer'>";
                         echo "<form action='' method='post'>";

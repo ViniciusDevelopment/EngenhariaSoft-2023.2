@@ -36,6 +36,26 @@ class Autenticacao
         }
     }
 
+    public function ObterPrestadoresServico()
+{
+    $conexao = new Conexao;
+    $conectado = $conexao->conectarBancoDeDados();
+
+    $sql = "SELECT id, nome FROM usuarios WHERE nivel = 1";
+    $result = $conectado->query($sql);
+
+    $prestadores = array();
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $prestadores[$row['id']] = $row['nome'];
+        }
+    }
+
+    return $prestadores;
+}
+
+
     public function Login($email, $senha)
     {
         $conexao = new Conexao;
